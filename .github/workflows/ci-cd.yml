@@ -31,6 +31,9 @@ jobs:
 
   staging:
     name: 🚀 Deploy to Staging
+    if: success()
+    run: |
+      curl -X POST ${{ secrets.НАЗВАНИЕ(RENDER_HOOK) }}
     runs-on: ubuntu-latest
     needs: unit-test
 
